@@ -40,6 +40,16 @@ Executes a commands output file and generates the ASCII image.
 ```
 ./painting.js paint -i ascii_image.out -r 14 -c 80
 ```
+### Options:
+
+**-i, --input**
+Command file path
+
+**-r, --rows**
+Canvas' rows
+
+**-c, --columns**
+Canvas' columns
 
 ## Strategies
 
