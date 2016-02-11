@@ -1,6 +1,6 @@
 # HashCode Challenge ASCII Painting Generator
 
-Gets an ASCII painting input and generates the necessary paint commands for Google's paint specialized painting machine.
+Gets an ASCII painting input and generates the necessary paint commands for Google's specialized painting machine.
 
 ## Getting started
 
@@ -20,15 +20,15 @@ To generate a painting command out file execute:
 
 ### Options:
 
-** -i, --input **
+**-i, --input**
 
 Input file patch
 
-** -o, --output **
+**-o, --output**
 
 Output file path where generator will create the commands file.
 
-** -s, --strategy **
+**-s, --strategy**
 
 Strategy to be applied. Default: hlines (Horizontal Lines)
 
