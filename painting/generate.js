@@ -1,6 +1,7 @@
 'use strict';
 
-var MatrixParser = require('../lib/MatrixParser'),
+var fs = require('fs'),
+  MatrixParser = require('../lib/MatrixParser'),
   StrategyFactory = require('../lib/strategies/StrategyFactory'),
   Task = require('../lib/Task');
 
@@ -18,6 +19,11 @@ module.exports = function(parser){
       help: 'Generation strategy',
       default: 'hlines'
     })
+    .option('output', {
+      abbr: 'o',
+      required: true,
+      help: 'Output file'
+    })
     .callback(function(opts){
 
       MatrixParser.parseFile(opts.input, function(err, matrix){
@@ -30,8 +36,12 @@ module.exports = function(parser){
           .setStrategy(StrategyFactory.create(opts.strategy))
           .build()
           .run();
-
-        console.log(result);
+        var stream = fs.createWriteStream(opts.output);
+        stream.once('open', function(){
+          stream.write(result.commands.length+'\n');
+          stream.write(result.commands.join('\n'));
+          stream.end();
+        });
       });
     });
 };
