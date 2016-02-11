@@ -41,6 +41,11 @@ module.exports = function(parser){
           stream.write(result.commands.length+'\n');
           stream.write(result.commands.join('\n'));
           stream.end();
+          console.log('Command output file generated with: ', {
+            score: result.score,
+            commands: result.commands.length,
+            strategy: opts.strategy
+          });
         });
       });
     });
