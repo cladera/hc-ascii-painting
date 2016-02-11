@@ -51,3 +51,12 @@ Generates a PRINT_LINE command for all the lines within each row.
 ./painting.js generate -i ascii_image.in -s hlines -o ascii_image.out
 ```
 
+### vlines - Vertical Lines
+
+Generates a PRINT_LINE command for all the lines within each column.
+
+```
+./painting.js generate -i ascii_image.in -s vlines -o ascii_image.out
+```
+
+
